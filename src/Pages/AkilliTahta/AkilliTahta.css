@@ -1,0 +1,28 @@
+.akilli-tahta-oyunlari {
+    margin-top: 200px;
+    display: flex; /* Kutuları yatayda hizalamak için */
+    flex-wrap: wrap; /* Satır taşarsa yeni satır oluştur */
+    gap: 20px; /* Kutular arasında boşluk */
+    
+    justify-content: center; /* Kutuları ortala */
+}
+
+.oyun-kutusu {
+    background-color: #f4f4f4; /* Kutu arka planı */
+    border: 1px solid #ddd; /* Kutu kenarlıkları */
+    border-radius: 8px; /* Kenarları yuvarlat */
+    padding: 15px; /* İçerik etrafında boşluk */
+    width: 300px; /* Sabit genişlik */
+    text-align: center; /* Metni ortala */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Hafif gölge efekti */
+}
+
+.oyun-kutusu h3 {
+    margin-bottom: 10px; /* Başlık ve açıklama arasında boşluk */
+    color: #333; /* Başlık rengi */
+}
+
+.oyun-kutusu p {
+    color: #666; /* Açıklama rengi */
+    font-size: 14px; /* Yazı boyutu */
+}

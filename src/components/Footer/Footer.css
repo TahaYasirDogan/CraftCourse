@@ -1,0 +1,37 @@
+.footer {
+    background-color: #333; /* Arka plan gri */
+    color: #fff; /* Yazı rengi beyaz */
+    padding: 20px 0px; /* İçerik etrafında boşluk */
+    display: flex; /* İçeriği yatay hizala */
+    justify-content: space-between; /* İçeriği iki tarafa dağıt */
+    align-items: center; /* Dikeyde ortala */
+    border-top: 1px solid #444; /* Üst sınır çizgisi */
+    margin-top: 200px;
+    bottom: 0; /* Alt konumda yapışık */
+    left: 0;
+    
+    width: 100%; /* Tüm genişliği kaplar */
+    z-index: 10;
+}
+
+.footer-content {
+    display: flex; /* İçeriği yatay hizala */
+    justify-content: space-between; /* İçeriği sağa ve sola dağıt */
+    width: 100%; /* Kapsayıcı genişliği tam kullan */
+    max-width: 1200px; /* İçeriğin genişliğini sınırlamak */
+    margin: 0 auto; /* Ortala */
+}
+
+.footer-left,
+.footer-right {
+    flex: 1; /* Eşit genişlik */
+    padding: 10px; /* İçerik etrafında biraz boşluk */
+}
+
+.footer-left {
+    text-align: left; /* Sol tarafta hizala */
+}
+
+.footer-right {
+    text-align: right; /* Sağ tarafta hizala */
+}

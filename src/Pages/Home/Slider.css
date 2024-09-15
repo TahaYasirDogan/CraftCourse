@@ -1,0 +1,149 @@
+.slider-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 80px 0;
+    
+  }
+  
+  .slick-slide img {
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    
+  }
+  .slide-content {
+    position: absolute;
+    top: 30%;
+    left: 54%;
+    transform: translate(-50%, -50%);
+    color: black;
+    text-align: left;
+    background: white(0, 0, 0, 0.5); /* Yazının arka planını hafif opak yapar */
+    padding: 10px 20px;
+    border-radius: 8px;
+  }
+
+  .slide-content2 {
+    position: absolute;
+    top: 30%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    color: black;
+    text-align: left;
+    background: white(0, 0, 0, 0.5); /* Yazının arka planını hafif opak yapar */
+    padding: 10px 20px;
+    border-radius: 8px;
+  }
+
+  .slide-content3 {
+    position: absolute;
+    top: 30%;
+    left: 39.3%;
+    transform: translate(-50%, -50%);
+    color: black;
+    text-align: left;
+    background: white(0, 0, 0, 0.5); /* Yazının arka planını hafif opak yapar */
+    padding: 10px 20px;
+    border-radius: 8px;
+  }
+  
+  .slide-content h2, .slide-content2 h2, .slide-content3 h2 {
+    margin: 0 0 10px 0;
+    font-size: 24px;
+    font-weight: 500;
+  }
+  
+  .slide-content p, .slide-content2 p, .slide-content3 p {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+  }
+  
+  .slide-content a, .slide-content2 a, .slide-content3 a {
+    color: #eb5144;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  @media (min-width: 1200px) {
+    .slide-content h2, .slide-content2 h2, .slide-content3 h2 {
+      font-size: 36px; /* Büyük ekranlarda daha büyük */
+    }
+    .slide-content p, .slide-content2 p, .slide-content3 p {
+      font-size: 20px;
+    }
+    .slide-content a, .slide-content2 a, .slide-content3 a {
+      font-size: 20px;
+    }
+  }
+  
+  /* Daha dar ekranlar için (örneğin tablet) */
+  @media (max-width: 768px) {
+    .slide-content, .slide-content2, .slide-content3 {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 10px 10px;
+      
+    }
+
+    .slide-content h2, .slide-content2 h2, .slide-content3 h2  {
+      font-size: 20px; /* Küçük ekranlarda daha küçük */
+    }
+    .slide-content p, .slide-content2 p, .slide-content3 p  {
+      font-size: 14px;
+    }
+    .slide-content a, .slide-content2 a, .slide-content3 a  {
+      font-size: 14px;
+    }
+  }
+
+  @media (max-with:600px) {
+    .slide-content {
+      left: 50%;
+    }
+    .slide-content2{
+      left: 23%;
+    }
+    .slide-content3{
+      left: 38.3%
+    }
+  }
+
+  @media (max-width: 480px) {
+    .slide-content h2, .slide-content2 h2, .slide-content3 h2 {
+      font-size: 14px; 
+    }
+    .slide-content p, .slide-content2 p, .slide-content3 p {
+      font-size: 10px;
+    }
+    .slide-content a, .slide-content2 a, .slide-content3 a {
+      font-size: 10px;
+    }
+  }
+
+  .slick-prev, .slick-next {
+    width: 40px;
+    height: 40px;
+    z-index: 1; /* İçerik üstünde olması için */
+     /* Siyah ve biraz saydam */
+    color: white;
+    border-radius: 50%; /* Yuvarlak buton */
+  }
+  
+  .slick-prev:hover, .slick-next:hover {
+    background: rgba(0, 0, 0, 0.8); /* Üzerine gelince daha koyu */
+  }
+  
+  .slick-prev {
+    left: 10px; /* Slider resminin içinde sol tarafa yerleştirir */
+  }
+  
+  .slick-next {
+    right: 10px; /* Slider resminin içinde sağ tarafa yerleştirir */
+  }
+
+  .arrow-png{
+    width: 30px;
+    align-items: center;
+    
+
+  }

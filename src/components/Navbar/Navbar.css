@@ -1,0 +1,201 @@
+.nav {  
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding: 0;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 80px; /* Başlangıç yüksekliği */
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* İçerikleri düzgün hizalar */
+  transition: height 0.4s ease, box-shadow 0.4s ease;
+  box-sizing: border-box;
+  z-index: 1000;
+  padding: 0 20px;
+}
+
+.nav.shrink {
+  height: 65px; /* Scroll yapıldığında küçülen navbar */
+}
+
+.nav-logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0px;
+}
+
+.nav-logo {
+  font-family: Poppins;
+  font-size: 32px;
+  margin: 0;
+  color: #eb5144;
+  cursor: pointer;
+}
+
+.search-icon {
+  display: none; /* Büyük ekranlarda gizli */
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  z-index: 1100; /* Menüden üstte olması için */
+}
+
+.nav-search {
+
+  display: flex;
+  align-items: center;
+  margin-left: 0px;
+  position: relative;
+  flex: 0.8;
+  max-width: 600px;
+}
+
+.search-input {
+  padding: 15px 15px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  outline: none;
+  width: 100%; /* Büyük pencerelerde genişlik */
+  flex-grow: 1;
+  box-sizing: border-box;
+}
+
+.search-button {
+  margin-left: 10px; /* Butonu arama çubuğundan ayır */
+  padding: 5px 10px;
+  border: none;
+  background-color: #eb5144;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #d9443a;
+}
+
+.logo-craft {
+  height: 50px;
+  width: auto;
+  margin: 0;
+  padding: 10px 2px 10px 20px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.nav-contact {
+  padding: 0px 5px;
+  border: 2px solid #eb5144;
+  border-radius: 5px;
+  color: white;
+  background-color: #eb5144;
+  cursor: pointer;
+}
+
+.nav-menu li:nth-child(5) {
+  padding: 0px 5px;
+  
+  margin-right: 0px;
+  border: 2px solid #eb5144;
+  border-radius: 5px;
+  color: #eb5144;
+  background-color: white;
+  cursor: pointer;
+}
+
+.nav-menu li:nth-child(5):hover{
+  background-color: #eb5144;
+  color: white;
+}
+
+.nav-menu li:nth-child(6) {
+  background-color: white;
+  color: #eb5144;
+}
+
+.nav-menu li:nth-child(6):hover {
+  background-color: #eb5144;
+  color: white;
+}
+
+
+
+.nav-menu {
+  display: flex; /* Büyük ekranlarda sekmeleri gösterir */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  justify-content: flex-end;
+  font-size: 20px;
+  padding: 8px 0px;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.nav-menu li{
+  margin: 0px 12px;
+}
+
+
+.nav-menu li:hover{
+  color: #eb5144;
+  cursor: pointer;
+}
+
+
+
+.search-icon-image {
+  width: 24px; /* İkonun genişliği */
+  height: 24px; /* İkonun yüksekliği */
+}
+
+.search-icon-image:hover{
+  filter: brightness(0);
+}
+
+.search-icon {
+  display: none; /* Büyük ekranlarda gizli */
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  z-index: 1100; /* Menüden üstte olması için */
+  padding: 0;
+}
+
+
+/* Küçük ekranlar için düzenlemeler */
+@media (max-width: 1064px) {
+  .nav-menu {
+    display: none; /* Küçük ekranlarda başlangıçta gizle */
+  }
+
+  
+
+  .search-icon {
+    display: block; /* Küçük ekranlarda arama ikonu göster */
+  }
+
+  .nav-logo-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .nav-search {
+    display: none; /* Küçük ekranlarda arama çubuğunu gizle */
+  }
+
+  .nav {
+    padding: 0 10px; /* Küçük ekranlar için padding'i azalt */
+  }
+}
+
+
+

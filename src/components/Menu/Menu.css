@@ -1,0 +1,42 @@
+.ham-menu {
+  position: fixed; /* Menü sabit pozisyonda olacak */
+  top: 0; /* Üstten sıfır */
+  left: -250px; /* Başlangıçta solun dışında gizli */
+  width: 250px; /* Genişlik 250px */
+  height: 100vh; /* Tam ekran yüksekliği */
+  background-color: #333; /* Menü arka plan rengi */
+  color: white; /* Metin rengi */
+  display: flex;
+  flex-direction: column; /* İçerikler dikey olarak hizalanacak */
+  justify-content: flex-start; /* İçerikler üstte hizalanacak */
+  padding-top: 60px; /* Üstten boşluk */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Gölge efekti */
+  transition: left 0.5s ease; /* Açılış kapanış animasyonu */
+  z-index: 1000; /* Üstte görünmesi için */
+  
+  }
+
+  .ham-menu li:hover{
+    color: #eb5144;
+    cursor: pointer;
+    
+  }
+  .ham-menu li {
+    padding: 15px 20px; /* İçerik boşluğu */
+    list-style: none; /* Liste işaretlerini kaldır */
+  }
+
+  .ham-menu.open {
+    margin: 0;
+    padding: 70px 30px;
+    left: 0;
+  }
+  
+  .ham-menu.hidden {
+    margin: 0;
+    padding: 70px 30px;
+    left: -320px;
+  }
+  
+
+  
