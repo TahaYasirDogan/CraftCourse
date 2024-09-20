@@ -1,0 +1,10 @@
+.light-mode {
+    background-color: #F0F4F8;
+    color: black;
+  }
+  
+  /* dark-mode için stil */
+  .dark-mode {
+    background-color: #1E1E1E;
+    color: white;
+  }

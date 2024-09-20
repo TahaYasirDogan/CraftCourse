@@ -8,7 +8,7 @@ import Menu from '../Menu/Menu';
 import SearchOverlay from '../SearchOverlay/SearchOverlay.jsx'; // Yeni arama sekmesi componenti
 import { Link } from 'react-router-dom';
 
-export default function Navbar({ onLoginClick, toggleMenu, isMenuOpen }) {
+export default function Navbar({ onLoginClick, toggleMenu, isMenuOpen, darkMode, toggleDarkMode }) {
   const [isShrunk, setIsShrunk] = useState(false);
   const [showSearchOverlay, setShowSearchOverlay] = useState(false); // Arama sekmesini göstermek için state
   const navigate = useNavigate();
@@ -37,9 +37,11 @@ export default function Navbar({ onLoginClick, toggleMenu, isMenuOpen }) {
     };
   }, []);
 
+  const navbarClass = `nav ${darkMode ? 'nav-dark' : 'nav-light'} ${isShrunk ? 'shrink' : ''}`;
+
   return (
-    <div className={`nav ${isShrunk ? 'shrink' : ''}`}>
-      <Hamburger toggleMenu={toggleMenu} />
+    <div className={navbarClass}>
+      <Hamburger toggleMenu={toggleMenu} darkMode={darkMode} toggleDarkMode={toggleDarkMode}/>
       <div onClick={() => navigate('/')} className='nav-logo-container'>
         <img className='logo-craft' src={logo} alt='Logo' />
         <div className="nav-logo">raftCourse</div>
@@ -59,6 +61,12 @@ export default function Navbar({ onLoginClick, toggleMenu, isMenuOpen }) {
       <button className="search-icon" onClick={handleSearchClick}>
         <img src={searchIcon} alt="Search" className="search-icon-image" />
       </button>
+      <label className="ui-switch">
+        <input type="checkbox" checked={darkMode} onChange={toggleDarkMode} />
+        <div className="slider">
+          <div className="circle"></div>
+        </div>
+      </label>
 
       <ul className={`nav-menu ${isMenuOpen ? 'open' : ''}`}>
         <li onClick={() => navigate('akilli-tahta')}>Akıllı Tahta Oyunları</li>

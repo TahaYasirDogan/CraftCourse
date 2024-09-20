@@ -11,11 +11,11 @@ import Egitim from '../../Assets/Online-egitim.png';
 import Smartboard from '../../Assets/Smartboard.png';
 
 // Alternatif resimler
-import CraftingSmall from '../../Assets/crafting-small.png';
+import CraftingSmall from '../../Assets/Crafting-small.png';
 import EgitimSmall from '../../Assets/Online-egitim-small.png';
 import SmartboardSmall from '../../Assets/Smartboard-small.png';
 
-const SimpleSlider = () => {
+const SimpleSlider = ({darkMode}) => {
   const navigate = useNavigate();
   const [isSmallScreen, setIsSmallScreen] = useState(false);
 
@@ -49,7 +49,7 @@ const SimpleSlider = () => {
     : [Smartboard, Crafting, Egitim];              // Büyük ekran resimleri
 
   return (
-    <div className="slider-container">
+    <div className={`slider-container ${darkMode ? 'dark-mode' : 'light-mode'}`}>
       <Slider {...settings}>
         <div>
           <img src={images[0]} alt="Slide 1" />

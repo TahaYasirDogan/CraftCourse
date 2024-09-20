@@ -6,6 +6,8 @@ import Navbar from './components/Navbar/Navbar.jsx';
 import Footer from './components/Footer/Footer';
 import AkilliTahta from './Pages/AkilliTahta/AkilliTahta.jsx';
 import Home from './Pages/Home/Home.jsx';
+import Menu from './components/Menu/Menu.jsx';
+
 
 function App() {
   let heroData = [
@@ -17,6 +19,11 @@ function App() {
   const [heroCount, setHeroCount] = useState(0);
   const [showLogin, setShowLogin] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const [darkMode, setDarkMode] = useState(false);
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  }
 
   const handleLoginClick = () => {
     setShowLogin(true);
@@ -53,9 +60,10 @@ function App() {
 
   return (
     <Router>
-      <div className="app-container">
-        <Navbar onLoginClick={handleLoginClick} toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />
+      <div className={darkMode ? "dark-mode": "light-mode"}>
+        <Navbar onLoginClick={handleLoginClick} toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
         {showLogin && <LoginSignup onClose={closeLogin} />}
+        <Menu darkMode={darkMode} toggleDarkMode={toggleDarkMode}/>
         <Routes>
           <Route path="/" element={<Home />} />                {/* Anasayfa bileşeni */}
           <Route path="/akilli-tahta" element={<AkilliTahta />} /> {/* Akıllı Tahta sayfası */}
