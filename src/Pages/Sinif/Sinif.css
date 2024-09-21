@@ -1,0 +1,13 @@
+.yakinda {
+    margin-top: 75px;
+    padding-top: 50px;
+    display: flex; /* Kutuları yatayda hizalamak için */
+    flex-wrap: wrap; /* Satır taşarsa yeni satır oluştur */
+    gap: 20px; /* Kutular arasında boşluk */
+    
+    justify-content: center; /* Kutuları ortala */
+}
+
+.coming-png {
+    max-width: 400px;
+}

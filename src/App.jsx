@@ -6,8 +6,9 @@ import Navbar from './components/Navbar/Navbar.jsx';
 import Footer from './components/Footer/Footer';
 import AkilliTahta from './Pages/AkilliTahta/AkilliTahta.jsx';
 import Home from './Pages/Home/Home.jsx';
-import Menu from './components/Menu/Menu.jsx';
-
+import KursYap from './Pages/KursYap/KursYap.jsx';
+import Sinif from './Pages/Sinif/Sinif.jsx';
+import Kurs from './Pages/Kurslar/Kurs.jsx';
 
 function App() {
   let heroData = [
@@ -19,8 +20,8 @@ function App() {
   const [heroCount, setHeroCount] = useState(0);
   const [showLogin, setShowLogin] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   const [darkMode, setDarkMode] = useState(false);
+
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   }
@@ -34,7 +35,8 @@ function App() {
   };
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+    setIsMenuOpen((prevState) => !prevState); // Menü açıldığında true, kapandığında false yapacak
+    console.log("Menü durumu:", !isMenuOpen); // Konsolda kontrol et
   };
 
   useEffect(() => {
@@ -63,11 +65,13 @@ function App() {
       <div className={darkMode ? "dark-mode": "light-mode"}>
         <Navbar onLoginClick={handleLoginClick} toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
         {showLogin && <LoginSignup onClose={closeLogin} />}
-        <Menu darkMode={darkMode} toggleDarkMode={toggleDarkMode}/>
         <Routes>
-          <Route path="/" element={<Home />} />                {/* Anasayfa bileşeni */}
-          <Route path="/akilli-tahta" element={<AkilliTahta />} /> {/* Akıllı Tahta sayfası */}
+          <Route path="/" element={<Home />} />                
+          <Route path="/akilli-tahta" element={<AkilliTahta />} />
+          <Route path='/kurs-yap' element={<KursYap />} /> 
+          <Route path='/sinif' element={<Sinif />} />
           <Route path="/search" element={<div>Arama Sayfası</div>} />
+          <Route path='/kurslar' element={<Kurs />} />
         </Routes>
         <Footer />
       </div>

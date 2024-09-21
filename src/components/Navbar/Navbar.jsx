@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import logo from '../../Assets/logo.png';
 import searchIcon from '../../Assets/search.png';
-import Hamburger from '../Hamburger/Hamburger';
 import Menu from '../Menu/Menu';
 import SearchOverlay from '../SearchOverlay/SearchOverlay.jsx'; // Yeni arama sekmesi componenti
 import { Link } from 'react-router-dom';
@@ -41,7 +40,7 @@ export default function Navbar({ onLoginClick, toggleMenu, isMenuOpen, darkMode,
 
   return (
     <div className={navbarClass}>
-      <Hamburger toggleMenu={toggleMenu} darkMode={darkMode} toggleDarkMode={toggleDarkMode}/>
+      <Menu toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} darkMode={darkMode} toggleDarkMode={toggleDarkMode} onLoginClick={onLoginClick}/>
       <div onClick={() => navigate('/')} className='nav-logo-container'>
         <img className='logo-craft' src={logo} alt='Logo' />
         <div className="nav-logo">raftCourse</div>
@@ -70,13 +69,12 @@ export default function Navbar({ onLoginClick, toggleMenu, isMenuOpen, darkMode,
 
       <ul className={`nav-menu ${isMenuOpen ? 'open' : ''}`}>
         <li onClick={() => navigate('akilli-tahta')}>Akıllı Tahta Oyunları</li>
-        <li>Kurslar</li>
-        <li>Kurs Yap</li>
-        <li>Sınıf</li>
+        <li onClick={() => navigate('kurslar')}>Kurslar</li>
+        <li onClick={() => navigate('kurs-yap')}>Kurs Yap</li>
+        <li onClick={() => navigate('sinif')}>Sınıf</li>
         <li className='nav-oturum' onClick={onLoginClick}>Giriş yap</li>
         <li className='nav-contact' onClick={onLoginClick}>Kaydol</li>
       </ul>
-      <Menu onLoginClick={onLoginClick} isMenuOpen={isMenuOpen}/>
     </div>
   );
 }
